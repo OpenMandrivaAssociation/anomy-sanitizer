@@ -8,6 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	GPL
 Group: 		Networking/Mail
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source: 	http://mailtools.anomy.net/dist/%{name}-%{version}.tar.bz2
 Source1:	%{name}.conf.bz2
 URL: 		http://mailtools.anomy.net/
