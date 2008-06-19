@@ -1,6 +1,6 @@
 %define name		anomy-sanitizer
 %define version		1.76
-%define release         %mkrel 1
+%define release         %mkrel 2
 
 Summary: 	Anomy Sanitizer
 Name: 		%{name}
