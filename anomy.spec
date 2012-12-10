@@ -1,19 +1,14 @@
-%define name		anomy-sanitizer
-%define version		1.76
-%define release         %mkrel 3
-
-Summary: 	Anomy Sanitizer
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
-License: 	GPL
-Group: 		Networking/Mail
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Source: 	http://mailtools.anomy.net/dist/%{name}-%{version}.tar.bz2
+Summary:	Anomy Sanitizer
+Name:		anomy-sanitizer
+Version:	1.76
+Release:	4
+License:	GPL
+Group:		Networking/Mail
+URL:		http://mailtools.anomy.net/
+Source:		http://mailtools.anomy.net/dist/%{name}-%{version}.tar.bz2
 Source1:	%{name}.conf.bz2
-URL: 		http://mailtools.anomy.net/
 Requires:	perl
-Buildarch:	noarch
+BuildArch:	noarch
 
 %description
 The Anomy sanitizer is what most people would call "an email virus scanner".
@@ -34,14 +29,15 @@ attachments for viruses. Other things it can do:
 
 %prep
 %setup -q -n anomy
-mkdir -p %{buildroot}%{_bindir}\
-	 %{buildroot}%{perl_vendorlib}\
-	 %{buildroot}%{_sysconfdir}\
-	 %{buildroot}/var/spool/anomy
 
 %build
 
 %install
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{perl_vendorlib}
+mkdir -p %{buildroot}%{_sysconfdir}
+mkdir -p %{buildroot}/var/spool/anomy
+
 cp -R bin/Anomy %{buildroot}%{perl_vendorlib}/Anomy
 cp -r bin/*.pl %{buildroot}%{_bindir}
 bzcat %{SOURCE1} > %{buildroot}%{_sysconfdir}/%{name}.conf
@@ -52,7 +48,3 @@ bzcat %{SOURCE1} > %{buildroot}%{_sysconfdir}/%{name}.conf
 %{perl_vendorlib}/Anomy/*
 %{_bindir}/*
 %dir /var/spool/anomy
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
