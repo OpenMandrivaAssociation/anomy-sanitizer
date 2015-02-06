@@ -1,7 +1,7 @@
 Summary:	Anomy Sanitizer
 Name:		anomy-sanitizer
 Version:	1.76
-Release:	4
+Release:	5
 License:	GPL
 Group:		Networking/Mail
 URL:		http://mailtools.anomy.net/
