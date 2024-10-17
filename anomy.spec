@@ -4,7 +4,7 @@ Version:	1.76
 Release:	5
 License:	GPL
 Group:		Networking/Mail
-URL:		http://mailtools.anomy.net/
+URL:		https://mailtools.anomy.net/
 Source:		http://mailtools.anomy.net/dist/%{name}-%{version}.tar.bz2
 Source1:	%{name}.conf.bz2
 Requires:	perl
